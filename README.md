@@ -1,4 +1,5 @@
 SHNakamapActivity
 =================
 
-UIActivity for Nakamap
+UIActivity for Nakamap  
+[http://nakamap.com/](http://nakamap.com/)
