@@ -7,23 +7,42 @@
 //
 
 #import "ViewController.h"
+#import "SHNakamapActivity.h"
+#import "NSString+URLEncoding.h"
+
 
 @interface ViewController ()
 
 @end
+
+
 
 @implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark -------------------------------------------------------------------
+#pragma mark IBAction
+
+- (IBAction)pressBtn:(UIButton *)sender {
+    
+    NSString *text  = [@"タップ忍者がAppStoreのBest of 2012に選ばれました！ http://t.co/iy2Oq78T" URLEncodedString];
+
+    SHNakamapActivity *nakamapActivity = [[SHNakamapActivity alloc] init];
+        
+    UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:@[text]
+                                                                               applicationActivities:@[nakamapActivity]];
+    
+    [self presentViewController:activityView animated:YES completion:nil];
 }
 
 @end
